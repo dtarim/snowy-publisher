@@ -21,4 +21,4 @@ COPY run.sh /app/run.sh
 RUN chmod +x /app/*.sh
 
 # Çalıştırılacak komutu belirtiyoruz
-CMD ["./publish.sh"]
+CMD ["bash", "./publisher.sh"]
