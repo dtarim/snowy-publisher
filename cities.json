@@ -1,0 +1,15 @@
+{
+    "Asia": ["Tokyo", "Seoul", "Bangkok", "Delhi", "Beijing", "Jakarta", "Manila", "Ho Chi Minh City", "Hong Kong", "Taipei",
+             "Kuala Lumpur", "Hanoi", "Singapore", "Mumbai", "Shanghai", "Osaka", "Chennai", "Kolkata", "Karachi", "Dhaka"],
+    "Europe": ["London", "Paris", "Berlin", "Madrid", "Rome", "Vienna", "Amsterdam", "Brussels", "Stockholm", "Copenhagen",
+               "Oslo", "Lisbon", "Helsinki", "Athens", "Prague", "Warsaw", "Dublin", "Budapest", "Zurich", "Edinburgh"],
+    "North America": ["New York", "Los Angeles", "Chicago", "Houston", "Toronto", "Mexico City", "Vancouver", "Miami", "Dallas", "Boston",
+                      "Montreal", "Washington", "Atlanta", "San Francisco", "Seattle", "Philadelphia", "San Diego", "Denver", "Detroit", "Phoenix"],
+    "South America": ["São Paulo", "Buenos Aires", "Rio de Janeiro", "Lima", "Bogotá", "Santiago", "Caracas", "Quito", "La Paz", "Montevideo",
+                      "Asunción", "Brasília", "Medellín", "Guayaquil", "Córdoba", "Maracaibo", "Santa Cruz", "Rosario", "Fortaleza", "Manaus"],
+    "Africa": ["Cairo", "Lagos", "Kinshasa", "Johannesburg", "Nairobi", "Casablanca", "Accra", "Algiers", "Khartoum", "Tunis",
+               "Luanda", "Addis Ababa", "Dakar", "Dar es Salaam", "Kampala", "Maputo", "Port Harcourt", "Kano", "Lusaka", "Abidjan"],
+    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin", "Gold Coast", "Newcastle",
+                  "Wellington", "Christchurch", "Auckland", "Hamilton", "Tauranga", "Dunedin", "Geelong", "Townsville", "Cairns", "Toowoomba"]
+  }
+  

@@ -11,14 +11,13 @@ RUN apt-get update && apt-get install -y \
 # Çalışma dizinini ayarlayın
 WORKDIR /app
 
-# Şehirler dosyasını, script dosyalarını ve diğer gerekli dosyaları kopyalayın
-COPY cities.txt /app/cities.txt
+# Gerekli dosyaları kopyalayın
+COPY cities.json /app/cities.json
 COPY get_weather.sh /app/get_weather.sh
 COPY publish.sh /app/publish.sh
-COPY run.sh /app/run.sh
 
 # Scriptlerin çalıştırılabilir olmasını sağlıyoruz
 RUN chmod +x /app/*.sh
 
-# Çalıştırılacak komutu belirtiyoruz
-CMD ["bash", "./publish.sh"]
+# ENTRYPOINT ile publish.sh script'ini çalıştırın ve ek argümanları kabul edin
+ENTRYPOINT ["bash", "/app/publish.sh"]

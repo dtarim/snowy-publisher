@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  publisher_asia:
+    build: .
+    environment:
+      - CONTINENT=Asia
+    networks:
+      - app_network
+
+  publisher_europe:
+    build: .
+    environment:
+      - CONTINENT=Europe
+    networks:
+      - app_network
+
+  publisher_north_america:
+    build: .
+    environment:
+      - CONTINENT=North America
+    networks:
+      - app_network
+
+  publisher_south_america:
+    build: .
+    environment:
+      - CONTINENT=South America
+    networks:
+      - app_network
+
+  publisher_africa:
+    build: .
+    environment:
+      - CONTINENT=Africa
+    networks:
+      - app_network
+
+  publisher_australia:
+    build: .
+    environment:
+      - CONTINENT=Australia
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
