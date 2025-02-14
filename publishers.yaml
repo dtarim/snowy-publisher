@@ -1,19 +1,16 @@
-# Publisher Asia
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: publisher-asia
+  name: publisher
 spec:
-  replicas: 1
+  replicas: 1  # Sadece 1 pod
   selector:
     matchLabels:
       app: publisher
-      continent: asia
   template:
     metadata:
       labels:
         app: publisher
-        continent: asia
     spec:
       containers:
       - name: publisher-asia
@@ -24,39 +21,6 @@ spec:
           value: "http://weather-service.default.svc.cluster.local:15000"
         - name: CONTINENT
           value: "Asia"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: publisher-asia
-spec:
-  selector:
-    app: publisher
-    continent: asia
-  ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 8080
-
-# Publisher Europe
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: publisher-europe
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: publisher
-      continent: europe
-  template:
-    metadata:
-      labels:
-        app: publisher
-        continent: europe
-    spec:
-      containers:
       - name: publisher-europe
         image: snowy_publisher:v1.0
         imagePullPolicy: Never
@@ -65,121 +29,6 @@ spec:
           value: "http://weather-service.default.svc.cluster.local:15000"
         - name: CONTINENT
           value: "Europe"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: publisher-europe
-spec:
-  selector:
-    app: publisher
-    continent: europe
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-
-# Publisher North America
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: publisher-namerica
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: publisher
-      continent: namerica
-  template:
-    metadata:
-      labels:
-        app: publisher
-        continent: namerica
-    spec:
-      containers:
-      - name: publisher-namerica
-        image: snowy_publisher:v1.0
-        imagePullPolicy: Never
-        env:
-        - name: SERVER_ADDRESS
-          value: "http://weather-service.default.svc.cluster.local:15000"
-        - name: CONTINENT
-          value: "North America"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: publisher-namerica
-spec:
-  selector:
-    app: publisher
-    continent: namerica
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-
-# Publisher South America
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: publisher-samerica
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: publisher
-      continent: samerica
-  template:
-    metadata:
-      labels:
-        app: publisher
-        continent: samerica
-    spec:
-      containers:
-      - name: publisher-samerica
-        image: snowy_publisher:v1.0
-        imagePullPolicy: Never
-        env:
-        - name: SERVER_ADDRESS
-          value: "http://weather-service.default.svc.cluster.local:15000"
-        - name: CONTINENT
-          value: "South America"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: publisher-samerica
-spec:
-  selector:
-    app: publisher
-    continent: samerica
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-
-# Publisher Africa
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: publisher-africa
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: publisher
-      continent: africa
-  template:
-    metadata:
-      labels:
-        app: publisher
-        continent: africa
-    spec:
-      containers:
       - name: publisher-africa
         image: snowy_publisher:v1.0
         imagePullPolicy: Never
@@ -188,39 +37,22 @@ spec:
           value: "http://weather-service.default.svc.cluster.local:15000"
         - name: CONTINENT
           value: "Africa"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: publisher-africa
-spec:
-  selector:
-    app: publisher
-    continent: africa
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-
-# Publisher Australia
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: publisher-australia
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: publisher
-      continent: australia
-  template:
-    metadata:
-      labels:
-        app: publisher
-        continent: australia
-    spec:
-      containers:
+      - name: publisher-namerica
+        image: snowy_publisher:v1.0
+        imagePullPolicy: Never
+        env:
+        - name: SERVER_ADDRESS
+          value: "http://weather-service.default.svc.cluster.local:15000"
+        - name: CONTINENT
+          value: "North America"
+      - name: publisher-samerica
+        image: snowy_publisher:v1.0
+        imagePullPolicy: Never
+        env:
+        - name: SERVER_ADDRESS
+          value: "http://weather-service.default.svc.cluster.local:15000"
+        - name: CONTINENT
+          value: "South America"
       - name: publisher-australia
         image: snowy_publisher:v1.0
         imagePullPolicy: Never
@@ -229,16 +61,3 @@ spec:
           value: "http://weather-service.default.svc.cluster.local:15000"
         - name: CONTINENT
           value: "Australia"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: publisher-australia
-spec:
-  selector:
-    app: publisher
-    continent: australia
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
